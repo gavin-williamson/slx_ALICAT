@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2024b"><title>Help doc for block library_ALICAT_FLOW_RW/ALICAT_FLOW_RW</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(192, 76, 11); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 25px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>Help doc for block library_ALICAT_FLOW_RW/ALICAT_FLOW_RW</span></h1><h2  class = 'S1'><span>Type: Level 2 S-function Block</span></h2><h2  class = 'S1'><span>Description:</span></h2><div  class = 'S2'><span>This function communicates over serial with the ALICAT flowmeter/controller devices. The gas type, device type, data logging options, and control options can be set before the simulation starts. The batch limit and control setpoint can be updated while the simulation is running, and the totalizer can also be reset to 0. The function outputs the readings of the ALICAT. The outputs of the ALICAT can be configured before the simulaiton starts. Block works with both ALICAT controllers and meters.</span></div><div  class = 'S2'><span style=' font-weight: bold;'>Input Ports:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Totalizer Reset: reset switch for the totalizer which resets to totalizer to 0 when the input changes from 0 to 1. Input should be a constant of 0 unless totalizer is being reset. [double]</span></li><li  class = 'S4'><span>Totalizer Limit: Limit to which the totalizer/batch size is set [double]</span></li><li  class = 'S4'><span>Control setpoint: setpoint used to control the ALICAT based on the variable set in the Register Parameters [double]</span></li></ol><div  class = 'S2'><span style=' font-weight: bold;'>Output Ports:</span></div><ol  class = 'S3'><li  class = 'S4'><span>P_abs: absolute pressure reading from ALICAT [double]</span></li><li  class = 'S4'><span>Temperature: temperature reading from ALICAT [double]</span></li><li  class = 'S4'><span>Volumetric Flow: volumetric flow reading from ALICAT [double]</span></li><li  class = 'S4'><span>Mass Flow: mass flow reading from ALICAT [double]</span></li><li  class = 'S4'><span>Setpoint: setpoint value of variable using to control the ALICAT [double]</span></li><li  class = 'S4'><span>Valve Drive: used to measure how open a valve is, measured in percent [double]</span></li><li  class = 'S4'><span>Totalized Flow: totalized flow reading from ALICAT [double]</span></li></ol><div  class = 'S2'><span style=' font-weight: bold;'>Register Parameters:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Port: COM port of ALICAT device is connected to [string]</span></li><li  class = 'S4'><span>Device Identifier: unit id of ALICAT device [char]</span></li><li  class = 'S4'><span>Gas Type: active gas set on ALICAT Device (Current options: Hydrogen, Nitrogen, and Air)</span></li><li  class = 'S4'><span>Enable Batching: check box to determine whether batching is enabled (also enables totalizer reset input)</span></li><li  class = 'S4'><span>Setpoint Variable: variable used to control the ALICAT (Current options: Mass Flow, Volumetric Flow, Absolute Pressure, Valve Drive)</span></li><li  class = 'S4'><span>Enable ALICAT Controller: Select whether if you will control the ALICAT through Simulink or just read data</span></li><li  class = 'S4'><span>Device Type: Checkbox to select whether the ALICAT is a controller or a meter</span></li><li  class = 'S4'><span>Enable Totalizer: check box to determine whether the totalizer is enabled (also enables totalizer reset input)</span></li><li  class = 'S4'><span>Enable Valve Drive Recording: Check box to turn on valve drive data logging and display</span></li></ol><div  class = 'S2'><span style=' font-weight: bold;'>Notes About "Setpoint Variable":</span></div><ul  class = 'S3'><li  class = 'S4'><span>If set to "Valve Drive", "Control Setpoint" should be set to the percentage open on the range of 0-100. Where 0 corresponds to closed and 100 corresponds to fully open.</span></li></ul><div  class = 'S2'><span>Author: Gavin Williamson</span></div><div  class = 'S2'><span>Email:</span><span> </span><a href = "mailto:gwilliamson@jtecenergy.com"><span>gwilliamson@jtecenergy.com</span></a></div><div  class = 'S2'><span>Date: 01/27/2025</span></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Help doc for block library_ALICAT_FLOW_RW/ALICAT_FLOW_RW
+%% Type: Level 2 S-function Block
+%% Description:
+% This function communicates over serial with the ALICAT flowmeter/controller 
+% devices. The gas type, device type, data logging options, and control options 
+% can be set before the simulation starts. The batch limit and control setpoint 
+% can be updated while the simulation is running, and the totalizer can also be 
+% reset to 0. The function outputs the readings of the ALICAT. The outputs of 
+% the ALICAT can be configured before the simulaiton starts. Block works with 
+% both ALICAT controllers and meters.
+% 
+% *Input Ports:*
+%% 
+% # Totalizer Reset: reset switch for the totalizer which resets to totalizer 
+% to 0 when the input changes from 0 to 1. Input should be a constant of 0 unless 
+% totalizer is being reset. [double]
+% # Totalizer Limit: Limit to which the totalizer/batch size is set [double]
+% # Control setpoint: setpoint used to control the ALICAT based on the variable 
+% set in the Register Parameters [double]
+%% 
+% *Output Ports:*
+%% 
+% # P_abs: absolute pressure reading from ALICAT [double]
+% # Temperature: temperature reading from ALICAT [double]
+% # Volumetric Flow: volumetric flow reading from ALICAT [double]
+% # Mass Flow: mass flow reading from ALICAT [double]
+% # Setpoint: setpoint value of variable using to control the ALICAT [double]
+% # Valve Drive: used to measure how open a valve is, measured in percent [double]
+% # Totalized Flow: totalized flow reading from ALICAT [double]
+%% 
+% *Register Parameters:*
+%% 
+% # Port: COM port of ALICAT device is connected to [string]
+% # Device Identifier: unit id of ALICAT device [char]
+% # Gas Type: active gas set on ALICAT Device (Current options: Hydrogen, Nitrogen, 
+% and Air)
+% # Enable Batching: check box to determine whether batching is enabled (also 
+% enables totalizer reset input)
+% # Setpoint Variable: variable used to control the ALICAT (Current options: 
+% Mass Flow, Volumetric Flow, Absolute Pressure, Valve Drive)
+% # Enable ALICAT Controller: Select whether if you will control the ALICAT 
+% through Simulink or just read data
+% # Device Type: Checkbox to select whether the ALICAT is a controller or a 
+% meter
+% # Enable Totalizer: check box to determine whether the totalizer is enabled 
+% (also enables totalizer reset input)
+% # Enable Valve Drive Recording: Check box to turn on valve drive data logging 
+% and display
+%% 
+% *Notes About "Setpoint Variable":*
+%% 
+% * If set to "Valve Drive", "Control Setpoint" should be set to the percentage 
+% open on the range of 0-100. Where 0 corresponds to closed and 100 corresponds 
+% to fully open.
+%% 
+% Author: Gavin Williamson
+% 
+% Email: <mailto:gwilliamson@jtecenergy.com gwilliamson@jtecenergy.com>
+% 
+% Date: 01/27/2025
+##### SOURCE END #####
+-->
+</div></body></html>

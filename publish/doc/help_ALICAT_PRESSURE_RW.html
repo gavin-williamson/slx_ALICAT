@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2024b"><title>Help doc for block library_ALICAT_PRESSURE_RW/ALICAT_PRESSURE_RW</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(192, 76, 11); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 25px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>Help doc for block library_ALICAT_PRESSURE_RW/ALICAT_PRESSURE_RW</span></h1><h2  class = 'S1'><span>Type: LEVEL 2 S-Function</span></h2><h2  class = 'S1'><span>Description:</span></h2><div  class = 'S2'><span>This function communicates over serial with the ALICAT pressure devices. The gas type, device type, data logging options, and control options can be set before the simulation starts. The function outputs the readings of the ALICAT. The outputs of the ALICAT can be configured before the simulaiton starts. Block works with both ALICAT controllers and meters.</span></div><div  class = 'S2'><span></span></div><div  class = 'S2'><span style=' font-weight: bold;'>Input Ports:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Control setpoint: setpoint used to control the ALICAT based on the variable set in the Register Parameters [double]</span></li></ol><div  class = 'S2'><span style=' font-weight: bold;'>Output Ports:</span></div><ol  class = 'S3'><li  class = 'S4'><span>P_abs: absolute pressure reading from ALICAT [double]</span></li><li  class = 'S4'><span>Setpoint: setpoint value of variable using to control the ALICAT  [double]</span></li><li  class = 'S4'><span>Totalized Flow: totalized flow reading from ALICAT [double]</span></li></ol><div  class = 'S2'><span style=' font-weight: bold;'>Register Parameters: </span></div><ol  class = 'S3'><li  class = 'S4'><span>Port: COM port of ALICAT device is connected to [string]</span></li><li  class = 'S4'><span>Device Identifier: unit id of ALICAT device [char]</span></li><li  class = 'S4'><span>Setpoint Variable: variable used to control the ALICAT (Current options: Absolute Pressure and Valve Drive) </span></li><li  class = 'S4'><span> Enable ALICAT Controller: Select whether if you will control the ALICAT through Simulink or just read data</span></li><li  class = 'S4'><span>Device Type: Checkbox to select whether the ALICAT is a controller or a meter</span></li><li  class = 'S4'><span>Enable Valve Drive Recording: Checkbox to turn on valve drive data logging and display</span></li><li  class = 'S4'><span>Two Valve Controller: Checkbox to indicate if the device is a two valve controller enabling each valve to be controlled using valve drive control setting</span></li></ol><div  class = 'S2'><span> Author: Gavin Williamson</span></div><div  class = 'S2'><span>Email: gwilliamson@jtecenergy.com</span></div><div  class = 'S2'><span>Date: 03/17/2025</span></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% Help doc for block library_ALICAT_PRESSURE_RW/ALICAT_PRESSURE_RW
+%% Type: LEVEL 2 S-Function
+%% Description:
+% This function communicates over serial with the ALICAT pressure devices. The 
+% gas type, device type, data logging options, and control options can be set 
+% before the simulation starts. The function outputs the readings of the ALICAT. 
+% The outputs of the ALICAT can be configured before the simulaiton starts. Block 
+% works with both ALICAT controllers and meters.
+% 
+% 
+% 
+% *Input Ports:*
+%% 
+% # Control setpoint: setpoint used to control the ALICAT based on the variable 
+% set in the Register Parameters [double]
+%% 
+% *Output Ports:*
+%% 
+% # P_abs: absolute pressure reading from ALICAT [double]
+% # Setpoint: setpoint value of variable using to control the ALICAT  [double]
+% # Totalized Flow: totalized flow reading from ALICAT [double]
+%% 
+% *Register Parameters:* 
+%% 
+% # Port: COM port of ALICAT device is connected to [string]
+% # Device Identifier: unit id of ALICAT device [char]
+% # Setpoint Variable: variable used to control the ALICAT (Current options: 
+% Absolute Pressure and Valve Drive) 
+% # Enable ALICAT Controller: Select whether if you will control the ALICAT 
+% through Simulink or just read data
+% # Device Type: Checkbox to select whether the ALICAT is a controller or a 
+% meter
+% # Enable Valve Drive Recording: Checkbox to turn on valve drive data logging 
+% and display
+% # Two Valve Controller: Checkbox to indicate if the device is a two valve 
+% controller enabling each valve to be controlled using valve drive control setting
+%% 
+% Author: Gavin Williamson
+% 
+% Email: gwilliamson@jtecenergy.com
+% 
+% Date: 03/17/2025
+##### SOURCE END #####
+-->
+</div></body></html>
