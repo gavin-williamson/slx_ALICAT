@@ -5,7 +5,7 @@ slx_ALICAT is a simple toolbox that enables interaction with ALICAT devices. The
 
 Much of the functionality in this toolbox is implemented in base Simulink, so speed/determinism is not guaranteed, and this has not been tested with Simulink real-time products.
 
-slx_LJM is developed by Julian Bell and Gavin Williamson at [JTEC Energy](https://jtecenergy.com/). This blockset is licensed under the BSD 4-Clause license.
+slx_ALICAT is developed by Julian Bell and Gavin Williamson at [JTEC Energy](https://jtecenergy.com/). This blockset is licensed under the BSD 4-Clause license.
 
 ## How it Works:
 slx_ALICAT automatically takes care of a significant amount of housekeeping associated with setting up and Alicat—connecting to the device, enabling the totalizer, choosing the control loop variable, etc. This allows engineers to focus on data collection even quicker. It also has very low supporting hardware and software requirements—it runs in a normal Simulink model (not real-time) and does not require any expensive specialized toolkits or computer platforms to work. 
