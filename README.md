@@ -41,4 +41,6 @@ As of July 2025, there is no plan to add additional features to slx_ALICAT - it 
 
 ## Citation 
 
+MATLAB File Exchange: [![View slx_ALICAT on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/181590-slx_alicat)
+
 If you find this codebase REALLY useful, you can [buy Julian](https://www.paypal.com/paypalme/julianlelandbell) or [buy Gavin](https://paypal.me/GavinWilliamson255) a coffee!
